@@ -1,13 +1,10 @@
 name: Staging deployment
 
-on: 
-  pull_request:
-    types: [labeled]
+on: ['push']
 
 jobs:
   build:
-    if: contains(github.event.pull_request.labels.*.name, 'stage')
-
+    name: Staging build
     runs-on: ubuntu-latest
 
     steps:
